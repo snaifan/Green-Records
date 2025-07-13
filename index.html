@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ushamba Digital - Farm Management</title>
+    <title>Yobi Digital - Farm Management</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -14,7 +14,7 @@
         <nav class="sidebar">
             <div class="logo">
                 <i class="fas fa-leaf"></i>
-                <h2>Ushamba Digital</h2>
+                <h2>Yobi Digital</h2>
             </div>
             <ul>
                 <li><a href="#" onclick="switchTab('dashboard')" class="tab active" id="dashboard-tab"><i class="fas fa-home"></i> Dashboard</a></li>
@@ -33,20 +33,21 @@
         <!-- Main Content -->
         <main>
             <!-- Header -->
-            <header>
-                <div class="header-content">
-                    <h1>Farm Management Dashboard</h1>
-                    <div class="header-buttons">
-                        <button onclick="showForm('plant')"><i class="fas fa-seedling"></i> Add Plant</button>
-                        <button onclick="showForm('expense')"><i class="fas fa-money-bill"></i> Add Expense</button>
-                        <button onclick="showForm('income')"><i class="fas fa-coins"></i> Add Income</button>
-                        <button onclick="showPlantsModal()"><i class="fas fa-list"></i> View All Plants</button>
-                        <button onclick="exportData()"><i class="fas fa-download"></i> Export Data</button>
-                        <input type="file" id="import-data" onchange="importData(event)" style="display: none;">
-                        <button onclick="document.getElementById('import-data').click()"><i class="fas fa-upload"></i> Import Data</button>
-                    </div>
-                </div>
-            </header>
+ <header>
+    <div class="header-content">
+        <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+        <h1>Farm Management Dashboard</h1>
+        <div class="header-buttons">
+            <button onclick="showForm('plant')"><i class="fas fa-seedling"></i> Add Plant</button>
+            <button onclick="showForm('expense')"><i class="fas fa-money-bill"></i> Add Expense</button>
+            <button onclick="showForm('income')"><i class="fas fa-coins"></i> Add Income</button>
+            <button onclick="showPlantsModal()"><i class="fas fa-list"></i> View All Plants</button>
+            <button onclick="exportData()"><i class="fas fa-download"></i> Export Data</button>
+            <input type="file" id="import-data" onchange="importData(event)" style="display: none;">
+            <button onclick="document.getElementById('import-data').click()"><i class="fas fa-upload"></i> Import Data</button>
+        </div>
+    </div>
+</header>
             <!-- Plants Modal -->
             <div id="plants-modal" class="modal hidden" onclick="closeModalOnOutsideClick(event)">
                 <div class="modal-content">
@@ -54,7 +55,7 @@
                     <button class="modal-close" onclick="closePlantsModal()"><i class="fas fa-times"></i> Close</button>
                     <div id="plants-table" class="table-container"></div>
                     </div>
-                    </div>>
+                    </div>
 
             <!-- Dashboard -->
             <div id="dashboard" class="tab-content">

@@ -21,6 +21,23 @@ body.dark {
     min-height: 100vh;
 }
 
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+body.dark .menu-toggle {
+    background: #34495e;
+}
+
+/* Sidebar styles */
 .sidebar {
     width: 250px;
     background: #2c3e50;
@@ -31,7 +48,6 @@ body.dark {
     overflow-y: auto;
     transition: transform 0.3s;
 }
-
 .sidebar .logo {
     display: flex;
     align-items: center;
@@ -81,6 +97,8 @@ main {
     padding: 20px;
 }
 
+
+/* Header styles */
 header {
     background: white;
     border-radius: 10px;
@@ -119,7 +137,9 @@ body.dark header {
 .header-buttons button:nth-child(1) { background: #2c3e50; }
 .header-buttons button:nth-child(2) { background: #e74c3c; }
 .header-buttons button:nth-child(3) { background: #27ae60; }
-.header-buttons button:nth-child(4) { background: #3498db; } /* View All Plants button */
+.header-buttons button:nth-child(4) { background: #3498db; }
+.header-buttons button:nth-child(5), .header-buttons button:nth-child(6) { background: #7f8c8d; }
+ /* View All Plants button */
 .header-buttons button:nth-child(5), .header-buttons button:nth-child(6) { background: #7f8c8d; }
 
 .summary {
@@ -428,6 +448,53 @@ table button.delete { background: #e74c3c; }
     .header-content {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .header-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .dashboard-charts canvas {
+        height: 300px !important;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+}
+/* Mobile styles */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-250px);
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .header-buttons {

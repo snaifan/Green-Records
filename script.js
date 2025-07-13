@@ -76,20 +76,23 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTabs();
     renderDashboard();
     switchTab('dashboard');
-    // Toggle sidebar on mobile
+    // Toggle sidebar on mobile, exclude modal and header clicks
     document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768 && e.target.closest('.sidebar') === null && !e.target.closest('header') && !e.target.closest('.modal')) {
+        if (window.innerWidth <= 768 && 
+            e.target.closest('.sidebar') === null && 
+            e.target.closest('header') === null && 
+            e.target.closest('.modal') === null && 
+            !e.target.classList.contains('menu-toggle')) {
             document.querySelector('.sidebar').classList.remove('active');
         }
     });
 });
 
-// Toggle theme
-function toggleTheme() {
-    document.body.classList.toggle('dark');
-    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    updateCharts();
+// Toggle sidebar on mobile
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('active');
 }
+
 
 // Switch tabs
 function switchTab(tab) {
